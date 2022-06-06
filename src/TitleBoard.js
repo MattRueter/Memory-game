@@ -1,21 +1,39 @@
 import './TitleBoard.css';
 import React from 'react';   
 
+let currentScore = 9;
+let bestScore = 8; 
 
+class TitleBoard extends React.Component{
+  render(){
+    return(
+      <div className='titleBar'>
+        <h1>Memory Game</h1>
+        <p>Click on each card. Avoid clicking on the same card more than once in a round.</p>
+        <div className='score'>Current Score:{currentScore}</div>
+        <div className='score'>Best Score:{bestScore}</div>
+      </div>
+    )
+  }
+}
 
+export default TitleBoard;
+
+//**********************************************************
+//  Same as function 
+//********************************************************** 
+/*
 function TitleBoard() {
   return (
     <div>
       <div className='titleBar'>
         <h1>Memory Game</h1>
         <p>Click on each card. Avoid clicking on the same card more than once in a round.</p>
-        <div className='score'>Current Score:</div>
-        <div className='score'>Best Score:</div>
+        <div className='score'>Current Score:{currentScore}</div>
+        <div className='score'>Best Score:{bestScore}</div>
       </div>
 
     </div>
   );
 }
-
-
-export default TitleBoard;
+*/
