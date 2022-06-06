@@ -5,6 +5,9 @@ let currentScore = 9;
 let bestScore = 8; 
 
 class TitleBoard extends React.Component{
+  constructor(props){
+    super(props)
+  }
   render(){
     return(
       <div className='titleBar'>

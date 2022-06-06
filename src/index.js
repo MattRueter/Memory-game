@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import TitleBoard from './TitleBoard';
+import Card from './Card';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <TitleBoard />
+    <Card />
   </React.StrictMode>,
   document.getElementById('root')
 );
