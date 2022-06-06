@@ -1,6 +1,9 @@
 import React from 'react';
 import TitleBoard from './TitleBoard';
 
+let currentScore = 3;
+let bestScore = 6; 
+
 class Card extends React.Component{
 	constructor(props){
 		super(props);
@@ -8,8 +11,8 @@ class Card extends React.Component{
 	render(){
 		return(
 			<div>
-				<TitleBoard />
-				<p>hello from Card.js</p>
+				<TitleBoard currentScore={currentScore} bestScore={bestScore} />
+				<p>hello from Card</p>
 			</div>
 		)
 	}
