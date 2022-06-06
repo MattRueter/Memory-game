@@ -1,4 +1,5 @@
 import React from 'react';
+import './Card.css';
 import TitleBoard from './TitleBoard';
 
 
@@ -11,7 +12,9 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />
-				<p>hello from Card</p>
+				<div className='cardContainer'>
+					<div className='card'>Image here.</div>	
+				</div>
 			</div>
 		)
 	}
