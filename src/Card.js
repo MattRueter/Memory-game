@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
 
-const imageLibrary = ['image A', 'imgage B', 'image C', 'image D'];
+const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
 const images = imageLibrary.map((image) =>
 	<div className='card' key={image.toString()}>{image}</div>
 );
