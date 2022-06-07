@@ -2,7 +2,10 @@ import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
 
-const images = ['image A', 'imgage B', 'image C', 'image D'];
+const imageLibrary = ['image A', 'imgage B', 'image C', 'image D'];
+const images = imageLibrary.map((image) =>
+	<div className='card'>{image}</div>
+);
 
 class Card extends React.Component{
 	constructor(props){
@@ -14,7 +17,7 @@ class Card extends React.Component{
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />
 				<div className='cardContainer'>
-					<div className='card'>Image here.</div>	
+					<div>{images}</div>	
 				</div>
 			</div>
 		)
