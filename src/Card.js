@@ -2,11 +2,12 @@ import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
 
+const images = ['image A', 'imgage B', 'image C', 'image D'];
 
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0 };
+		this.state ={ currentScore:0, bestScore:0, clickedImages:[] };
 	}
 	render(){
 		return(
