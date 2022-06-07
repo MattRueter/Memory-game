@@ -16,9 +16,7 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />
-				<div className='cardContainer'>
-					<div>{images}</div>	
-				</div>
+					<div className='cardContainer'>{images}</div>	
 			</div>
 		)
 	}
