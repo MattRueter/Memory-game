@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
 
+const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
 
 class Card extends React.Component{
 	constructor(props){
@@ -12,10 +13,10 @@ class Card extends React.Component{
 
 	handleClick(image){
 		console.log('clicked '+image)
+		console.log(clickedImages.includes(image));
 	}
 
 	render(){
-		const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
 		const images= imageLibrary.map((image) =>
 		<div className='card' key={image.toString()} onClick={this.handleClick.bind(this,image)}>{image}</div>
 		);
