@@ -12,18 +12,14 @@ function displayCardsRandomly(){
 		const randomNumber=Math.floor(Math.random()*(imageLibrary.length));
 		if(imagesDisplayedRandomly.length===imageLibrary.length){
 		  stop =true;
-		  	console.log('stop.');
 		}else if(randomNumber>imageLibrary.length){
-			console.log('error. # too big.');
 		}else if(count.includes(randomNumber)){
-			console.log('# taken.');
 		}else{
 		  imagesDisplayedRandomly.push(imageLibrary[randomNumber]);
 		  count.push(randomNumber);
 		}	
 	}
 };
-
 function reset(){
 	imagesDisplayedRandomly=[];
 	count=[];
@@ -37,16 +33,18 @@ class Card extends React.Component{
 		this.state ={ currentScore:0, bestScore:0, clickedImages:[], clicked:false};
 		this.handleClick=this.handleClick.bind(this);
 	}
-
+	
 	handleClick(image){
-		//console.log('clicked '+image)
-		//console.log(clickedImages.includes(image));
+		if(this.state.clickedImages.includes(image)){
+			this.setState({currentScore:0}) //only updates once.
+		}else{
+			this.setState({currentScore: 5}) //only updates once.
+		}
 		reset();
 		displayCardsRandomly();
 		this.setState({clicked:true});
 	}
 
-	
 	render(){
 		let images;
 		if(imagesDisplayedRandomly.length===0){
