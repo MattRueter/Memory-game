@@ -4,7 +4,7 @@ import TitleBoard from './TitleBoard';
 
 const imageLibrary = ['image A', 'imgage B', 'image C', 'image D'];
 const images = imageLibrary.map((image) =>
-	<div className='card'>{image}</div>
+	<div className='card' key={image.toString()}>{image}</div>
 );
 
 class Card extends React.Component{
