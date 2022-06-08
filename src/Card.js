@@ -2,7 +2,9 @@ import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
 
-const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
+
+const imageLibrary = ['one.png', 'two.png', 'three.png','four.png'];
+//const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
 let imagesDisplayedRandomly=[];
 let count=[];
 let stop = false;
@@ -30,7 +32,7 @@ function reset(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:['image A', 'image B'], clicked:false};
+		this.state ={ currentScore:0, bestScore:0, clickedImages:[], clicked:false};
 		this.handleClick=this.handleClick.bind(this);
 	}
 	
@@ -38,6 +40,7 @@ class Card extends React.Component{
 		if(this.state.clickedImages.includes(image)){
 			this.setState({currentScore:0}) 
 		}else{
+
 			this.setState((state) =>{
 				return {currentScore: state.currentScore+1}
 			}); 
@@ -51,11 +54,11 @@ class Card extends React.Component{
 		let images;
 		if(imagesDisplayedRandomly.length===0){
 			images= imageLibrary.map((image) =>
-			<div className='card' key={image.toString()} onClick={this.handleClick.bind(this,image)}>{image}</div>
+			<div className='card' style={{backgroundImage:`url(${image})`}} key={image.toString()} onClick={this.handleClick.bind(this,image)}></div>
 			);
 		}else{
 			images = imagesDisplayedRandomly.map((image) =>
-			<div className='card' key={image.toString()} onClick={this.handleClick.bind(this,image)}>{image}</div>
+			<div className='card' style={{backgroundImage:`url(${image})`}} key={image.toString()} onClick={this.handleClick.bind(this,image)}></div>
 			);
 		}
 

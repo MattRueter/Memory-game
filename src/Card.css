@@ -1,5 +1,5 @@
 .cardContainer{
-	border: 3px solid black;
+	/* border: 3px solid black; */
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction:row;
