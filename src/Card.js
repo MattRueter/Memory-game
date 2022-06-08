@@ -4,7 +4,6 @@ import TitleBoard from './TitleBoard';
 
 
 const imageLibrary = ['one.png', 'two.png', 'three.png','four.png'];
-//const imageLibrary = ['image A', 'imgage B', 'image C', 'image D', 'image E', 'image F', 'image G', 'image H'];
 let imagesDisplayedRandomly=[];
 let count=[];
 let stop = false;
