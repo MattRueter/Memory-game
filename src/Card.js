@@ -5,10 +5,13 @@ import TitleBoard from './TitleBoard';
 
 const imageLibrary = ['one.png', 'two.png', 'three.png','four.png'];
 let imagesDisplayedRandomly=[];
-let count=[];
-let stop = false;
+
 
 function displayCardsRandomly(){
+	imagesDisplayedRandomly=[];
+	let count=[];
+	let stop = false;
+
 	while(stop===false){
 		const randomNumber=Math.floor(Math.random()*(imageLibrary.length));
 		if(imagesDisplayedRandomly.length===imageLibrary.length){
@@ -21,12 +24,6 @@ function displayCardsRandomly(){
 		}	
 	}
 };
-function reset(){
-	imagesDisplayedRandomly=[];
-	count=[];
-	stop = false;
-  }
-
 
 class Card extends React.Component{
 	constructor(props){
@@ -44,7 +41,6 @@ class Card extends React.Component{
 				return {currentScore: state.currentScore+1}
 			}); 
 		}
-		reset();
 		displayCardsRandomly();
 		this.setState({clicked:true});
 	}
