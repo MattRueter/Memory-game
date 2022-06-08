@@ -30,13 +30,13 @@ function reset(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:[], clicked:false};
+		this.state ={ currentScore:0, bestScore:0, clickedImages:['image A', 'image B'], clicked:false};
 		this.handleClick=this.handleClick.bind(this);
 	}
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			this.setState({currentScore:0}) //only updates once.
+			this.setState({currentScore:0}) 
 		}else{
 			this.setState((state) =>{
 				return {currentScore: state.currentScore+1}
