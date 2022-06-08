@@ -20,5 +20,5 @@
 	box-shadow: 2px 2px 2px;
 }
 	.card:hover{
-		background-color: rgb(34, 104, 136);
+		box-shadow: -12px 12px 1px;
 	}
