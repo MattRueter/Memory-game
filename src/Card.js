@@ -38,7 +38,9 @@ class Card extends React.Component{
 		if(this.state.clickedImages.includes(image)){
 			this.setState({currentScore:0}) //only updates once.
 		}else{
-			this.setState({currentScore: 5}) //only updates once.
+			this.setState((state) =>{
+				return {currentScore: state.currentScore+1}
+			}); 
 		}
 		reset();
 		displayCardsRandomly();
