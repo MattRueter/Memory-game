@@ -3,7 +3,7 @@ import './Card.css';
 import TitleBoard from './TitleBoard';
 
 
-const imageLibrary = ['one.png', 'two.png', 'three.png','four.png', 'five.png','six.png','eight.png','nine.png','ten.png','eleven.png','twelve.png'];
+const imageLibrary = ['one.png', 'two.png', 'three.png','four.png', 'five.png','six.png','seven.png','eight.png','nine.png','ten.png','eleven.png','twelve.png',];
 let imagesDisplayedRandomly = [];
 displayCardsRandomly(); 
 
