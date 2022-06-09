@@ -10,10 +10,14 @@ class TitleBoard extends React.Component{
   render(){
     return(
       <div className='titleBar'>
-        <h1>Memory Game</h1>
-        <p>Click on each card. Avoid clicking on the same card more than once in a round.</p>
-        <div className='score'>Current Score:{this.props.currentScore}</div>
-        <div className='score'>Best Score:{this.props.bestScore}</div>
+        <div>
+          <h1>Memory Game</h1>
+          <p>Click on each card. Avoid clicking on the same card more than once.</p>
+        </div>
+        <div>
+          <div className='score'>Current Score:{this.props.currentScore}</div>
+          <div className='score'>Best Score:{this.props.bestScore}</div>
+        </div>
       </div>
     )
   }

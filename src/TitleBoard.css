@@ -1,3 +1,7 @@
 h1{
   color: rgb(194, 82, 100);
 }
+.titleBar{
+  display:flex;
+  justify-content: space-between;
+}
