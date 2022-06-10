@@ -52,6 +52,8 @@ class Card extends React.Component{
 			});
 		}else if(this.state.currentScore==imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
+			const body =document.querySelector('body');
+				body.style.backgroundColor='white';
 		}
 	}
 
