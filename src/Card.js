@@ -30,19 +30,21 @@ function displayCardsRandomly(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:[]};
+		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], clicked: false};
 		this.handleClick=this.handleClick.bind(this);
 	}
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			this.setState({currentScore:0}) 
+			console.log('back to zero!');
+			this.setState({ currentScore:0, clickedImages:[''] });
+	
 		}else{
-			this.setState((state) =>{
-				return {currentScore: state.currentScore+1}
-			}); 
+			console.log('add a point /push this to array/has the bestScore changed?');
+			this.setState((state)=>{
+				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
+			})
 		}
-
 		displayCardsRandomly();
 	}
 
