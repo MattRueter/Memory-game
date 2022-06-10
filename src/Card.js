@@ -36,11 +36,11 @@ class Card extends React.Component{
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			console.log('back to zero!');
+			//console.log('back to zero!');
 			this.setState({ currentScore:0, clickedImages:[''] });
 	
 		}else{
-			console.log('add a point /push this to array/has the bestScore changed?');
+			//console.log('add a point /push this to array/has the bestScore changed?');
 			this.setState((state)=>{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
