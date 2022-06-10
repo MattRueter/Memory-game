@@ -10,8 +10,7 @@ displayCardsRandomly();
 function displayCardsRandomly(){
 	imagesDisplayedRandomly=[];
 	let count=[];
-	let stop = false;
-		
+	let stop = false;		
 		while(stop===false){
 			const randomNumber=Math.floor(Math.random()*(imageLibrary.length));
 				if(imagesDisplayedRandomly.length===imageLibrary.length){
@@ -38,14 +37,22 @@ class Card extends React.Component{
 		if(this.state.clickedImages.includes(image)){
 			//console.log('back to zero!');
 			this.setState({ currentScore:0, clickedImages:[''] });
-	
 		}else{
 			//console.log('add a point /push this to array/has the bestScore changed?');
 			this.setState((state)=>{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
 		}
-		displayCardsRandomly();
+		//displayCardsRandomly();
+	}
+	componentDidUpdate(){
+		if(this.state.currentScore>this.state.bestScore){
+			this.setState((state)=>{
+				return {bestScore:state.bestScore+1}
+			});
+		}else if(this.state.currentScore==imageLibrary.length){
+			console.log('you win.'); //wonDisplay component toggles to 'show.'
+		}
 	}
 
 	render(){
