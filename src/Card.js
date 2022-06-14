@@ -29,7 +29,7 @@ function displayCardsRandomly(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], clicked: false};
+		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], class:'winMessageContainer'};
 		this.handleClick=this.handleClick.bind(this);
 	}
 	
@@ -52,8 +52,7 @@ class Card extends React.Component{
 			});
 		}else if(this.state.currentScore==imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
-			const body =document.querySelector('body');
-				body.style.backgroundColor='white';
+			this.setState({class:'winMessageContainerShow'});
 		}
 	}
 
@@ -70,7 +69,7 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
-				<div className='cardContainer'>{images}<WinDisplay /></div>	
+				<div className='cardContainer'>{images}<WinDisplay class={this.state.class} /></div>	
 			</div>
 		)
 	}
