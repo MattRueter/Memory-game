@@ -42,7 +42,7 @@ class Card extends React.Component{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
 		}
-		//displayCardsRandomly();
+		displayCardsRandomly();
 	}
 	reset(){
 			this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'winMessageContainer'});
