@@ -31,6 +31,7 @@ class Card extends React.Component{
 		super(props);
 		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], class:'winMessageContainer'};
 		this.handleClick=this.handleClick.bind(this);
+		this.reset=this.reset.bind(this);
 	}
 	
 	handleClick(image){
@@ -43,6 +44,9 @@ class Card extends React.Component{
 		}
 		//displayCardsRandomly();
 	}
+	reset(){
+			this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'winMessageContainer'});
+	}
 	componentDidUpdate(){
 		if(this.state.currentScore>this.state.bestScore){
 			this.setState((state)=>{
@@ -50,10 +54,14 @@ class Card extends React.Component{
 			});
 		}else if(this.state.currentScore==imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
-			this.setState({class:'winMessageContainer' ? 'winMessageContainerShow' :'winMessageContainer', currentScore:0, clickedImages:['']});
+			this.setState({class:'winMessageContainerShow'});
+			this.reset();
 		}
 	}
 
+	componentWillUnmount(){
+
+	}
 	render(){
 		let images = imagesDisplayedRandomly.map((image) =>
 			<div 
