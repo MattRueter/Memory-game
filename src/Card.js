@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
-
+import WinDisplay from './WinDisplay';
 
 const imageLibrary = ['one.png', 'two.png', 'three.png','four.png', 'five.png','six.png','seven.png','eight.png','nine.png','ten.png','eleven.png','twelve.png',];
 let imagesDisplayedRandomly = [];
@@ -69,8 +69,8 @@ class Card extends React.Component{
 		
 		return(
 			<div>
-				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />
-					<div className='cardContainer'>{images}</div>	
+				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
+				<div className='cardContainer'>{images}<WinDisplay /></div>	
 			</div>
 		)
 	}

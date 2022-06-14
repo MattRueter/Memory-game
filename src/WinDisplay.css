@@ -1,4 +1,17 @@
 .winMessageContainer{
+	position: fixed;
+	margin-left:25%;
+	margin-right:25%;
+	height:700px;
+	width:900px;
 	border:3px;
+	border-radius:5%;
 	box-shadow:2px 2px 5px;
+	background-color:#471862de;
+	display:none;
+}
+.winMessageContainerShow{
+	display:flex;
+	align-items: center;
+	justify-content:center;
 }
