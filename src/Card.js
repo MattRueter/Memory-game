@@ -43,7 +43,7 @@ class Card extends React.Component{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
 		}
-		//displayCardsRandomly();
+		displayCardsRandomly();
 	}
 	componentDidUpdate(){
 		if(this.state.currentScore>this.state.bestScore){
