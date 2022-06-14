@@ -35,15 +35,13 @@ class Card extends React.Component{
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			//console.log('back to zero!');
 			this.setState({ currentScore:0, clickedImages:[''] });
 		}else{
-			//console.log('add a point /push this to array/has the bestScore changed?');
 			this.setState((state)=>{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
 		}
-		displayCardsRandomly();
+		//displayCardsRandomly();
 	}
 	componentDidUpdate(){
 		if(this.state.currentScore>this.state.bestScore){
@@ -52,7 +50,7 @@ class Card extends React.Component{
 			});
 		}else if(this.state.currentScore==imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
-			this.setState({class:'winMessageContainerShow'});
+			this.setState({class:'winMessageContainer' ? 'winMessageContainerShow' :'winMessageContainer', currentScore:0, clickedImages:['']});
 		}
 	}
 
