@@ -9,6 +9,7 @@ class WinDisplay extends React.Component{
 		return(
 			<div className={this.props.class}>
 				<h1>Well done!</h1>
+				<button onClick={this.props.click}>new game</button>
 			</div>
 		)
 	}

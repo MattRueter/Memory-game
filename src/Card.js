@@ -54,8 +54,7 @@ class Card extends React.Component{
 			});
 		}else if(this.state.currentScore==imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
-			this.setState({class:'winMessageContainerShow'});
-			this.reset();
+			this.setState({class:'winMessageContainerShow', currentScore:0});
 		}
 	}
 
@@ -75,7 +74,7 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
-				<div className='cardContainer'>{images}<WinDisplay class={this.state.class} /></div>	
+				<div className='cardContainer'>{images}<WinDisplay class={this.state.class} click={this.reset} /></div>	
 			</div>
 		)
 	}
