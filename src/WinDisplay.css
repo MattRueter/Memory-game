@@ -3,6 +3,7 @@
 }
 .winMessageContainerShow{
 	display:flex;
+	flex-direction:column;
 	align-items: center;
 	justify-content:center;
 	position: fixed;
@@ -14,4 +15,16 @@
 		border-radius:5%;
 		box-shadow:2px 2px 5px;
 		background-color:#471862de;
+}
+button{
+	height: 100px;
+	width:150px;
+	border-radius:5%;
+	box-shadow:2px 2px 2px white;
+	font-family:'Courier New', Courier, monospace;
+	background-color: aqua;
+	border-color: aqua;
+}
+button:hover{
+	box-shadow: 4px 4px 4px black;
 }
