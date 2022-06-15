@@ -29,14 +29,15 @@ function displayCardsRandomly(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer'};
+		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer', zero:false};
 		this.handleClick=this.handleClick.bind(this);
 		this.reset=this.reset.bind(this);
 	}
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			this.setState({ currentScore:0, clickedImages:[''] });
+			this.setState({ currentScore:0, clickedImages:[''], class: 'messageContainerShow',zero:true });
+
 		}else{
 			this.setState((state)=>{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
@@ -46,7 +47,11 @@ class Card extends React.Component{
 	}
 
 	reset(){
-			this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer'});
+			if(this.state.zero===true){
+				this.setState({ class:'messageContainer', zero:false });
+			}else{
+				this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer'});
+			}
 	}
 
 	componentDidUpdate(){
@@ -60,9 +65,6 @@ class Card extends React.Component{
 		}
 	}
 
-	componentWillUnmount(){
-
-	}
 	render(){
 		let images = imagesDisplayedRandomly.map((image) =>
 			<div 
