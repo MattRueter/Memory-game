@@ -1,6 +1,6 @@
 import React from 'react';
 import './Message.css';
-//winMessageContainer
+
 class Message extends React.Component{
 	constructor(props){
 		super(props);
