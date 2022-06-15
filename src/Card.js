@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 import TitleBoard from './TitleBoard';
-import WinDisplay from './WinDisplay';
+import Message from './Message';
 
 const imageLibrary = ['one.png', 'two.png', 'three.png','four.png', 'five.png','six.png','seven.png','eight.png','nine.png','ten.png','eleven.png','twelve.png',];
 let imagesDisplayedRandomly = [];
@@ -42,17 +42,19 @@ class Card extends React.Component{
 				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
 			})
 		}
-		displayCardsRandomly();
+		//displayCardsRandomly();
 	}
+
 	reset(){
 			this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'winMessageContainer'});
 	}
+
 	componentDidUpdate(){
 		if(this.state.currentScore>this.state.bestScore){
 			this.setState((state)=>{
 				return {bestScore:state.bestScore+1}
 			});
-		}else if(this.state.currentScore==imageLibrary.length){
+		}else if(this.state.currentScore===imageLibrary.length){
 			console.log('you win.'); //wonDisplay component toggles to 'show.'
 			this.setState({class:'winMessageContainerShow', currentScore:0});
 		}
@@ -74,7 +76,7 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
-				<div className='cardContainer'>{images}<WinDisplay class={this.state.class} click={this.reset} /></div>	
+				<div className='cardContainer'>{images}<Message class={this.state.class} click={this.reset} /></div>	
 			</div>
 		)
 	}

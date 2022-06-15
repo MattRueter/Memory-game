@@ -1,7 +1,7 @@
 import React from 'react';
-import './WinDisplay.css';
+import './Message.css';
 //winMessageContainer
-class WinDisplay extends React.Component{
+class Message extends React.Component{
 	constructor(props){
 		super(props);
 	}
@@ -15,4 +15,4 @@ class WinDisplay extends React.Component{
 	}
 }
 
-export default WinDisplay;
+export default Message;
