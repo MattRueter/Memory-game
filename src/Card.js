@@ -52,7 +52,6 @@ class Card extends React.Component{
 				message:'Try again.',
 				btnMessage: 'Continue' 
 			});
-
 		}else{
 			this.setState((state)=>{
 				return{
@@ -61,7 +60,7 @@ class Card extends React.Component{
 				}
 			})
 		}
-		//displayCardsRandomly();
+		displayCardsRandomly();
 	}
 
 	reset(){
@@ -78,7 +77,6 @@ class Card extends React.Component{
 				return {bestScore:state.bestScore+1}
 			});
 		}else if(this.state.currentScore===imageLibrary.length){
-			console.log('you win.'); //wonDisplay component toggles to 'show.'
 			this.setState({class:'messageContainerShow', currentScore:0});
 		}
 	}
@@ -96,7 +94,9 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
-				<div className='cardContainer'>{images}<Message class={this.state.class} click={this.reset} message={this.state.message} btnMessage={this.state.btnMessage}/></div>	
+				<div className='cardContainer'>{images}
+					<Message class={this.state.class} click={this.reset} message={this.state.message} btnMessage={this.state.btnMessage}/>
+				</div>	
 			</div>
 		)
 	}
