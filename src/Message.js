@@ -8,8 +8,8 @@ class Message extends React.Component{
 	render(){
 		return(
 			<div className={this.props.class}>
-				<h1>Well done!</h1>
-				<button onClick={this.props.click}>new game</button>
+				<h1>{this.props.message}</h1>
+				<button onClick={this.props.click}>{this.props.btnMessage}</button>
 			</div>
 		)
 	}

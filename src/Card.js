@@ -29,18 +29,36 @@ function displayCardsRandomly(){
 class Card extends React.Component{
 	constructor(props){
 		super(props);
-		this.state ={ currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer', zero:false};
+		this.state ={ 
+			currentScore:0, 
+			bestScore:0, 
+			clickedImages:[''], 
+			class:'messageContainer', 
+			zero:false,
+			message:'Well done.',
+			btnMessage:'New game.'
+		};
 		this.handleClick=this.handleClick.bind(this);
 		this.reset=this.reset.bind(this);
 	}
 	
 	handleClick(image){
 		if(this.state.clickedImages.includes(image)){
-			this.setState({ currentScore:0, clickedImages:[''], class: 'messageContainerShow',zero:true });
+			this.setState({ 
+				currentScore:0, 
+				clickedImages:[''], 
+				class: 'messageContainerShow',
+				zero:true, 
+				message:'Try again.',
+				btnMessage: 'Continue' 
+			});
 
 		}else{
 			this.setState((state)=>{
-				return{currentScore: state.currentScore+1, clickedImages:state.clickedImages+image+','}
+				return{
+					currentScore: state.currentScore+1, 
+					clickedImages:state.clickedImages+image+','
+				}
 			})
 		}
 		//displayCardsRandomly();
@@ -48,7 +66,7 @@ class Card extends React.Component{
 
 	reset(){
 			if(this.state.zero===true){
-				this.setState({ class:'messageContainer', zero:false });
+				this.setState({ class:'messageContainer', zero:false, message:'Well done.',btnMessage:'New game.' });
 			}else{
 				this.setState({currentScore:0, bestScore:0, clickedImages:[''], class:'messageContainer'});
 			}
@@ -78,7 +96,7 @@ class Card extends React.Component{
 		return(
 			<div>
 				<TitleBoard currentScore={this.state.currentScore} bestScore={this.state.bestScore} />	
-				<div className='cardContainer'>{images}<Message class={this.state.class} click={this.reset} /></div>	
+				<div className='cardContainer'>{images}<Message class={this.state.class} click={this.reset} message={this.state.message} btnMessage={this.state.btnMessage}/></div>	
 			</div>
 		)
 	}
