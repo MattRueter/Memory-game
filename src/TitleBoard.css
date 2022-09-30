@@ -3,5 +3,9 @@ h1{
 }
 .titleBar{
   display:flex;
-  justify-content: space-between;
+  justify-content:center;
+  align-items:center;
+  background-color:#471862de;
+  color:white;
+  border:1px solid black;
 }
